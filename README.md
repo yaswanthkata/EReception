@@ -1,6 +1,19 @@
 # ERegistration
-
+A simple Angular 6 Project using angular material.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+
+# Setup 
+ 1) clone repo
+ 2) npm install
+ 
+# Working demo 
+
+https://angular-zt6nod.stackblitz.io/
+
+# Features 
+ 1) Material grid binding
+ 2) Material card
+ 3) Custom theming
 
 ## Development server
 
