@@ -1,0 +1,14 @@
+﻿@import '../base/module';
+.cascading-menu {
+    background-color: $color-light;
+    color: $color-dark;
+}
+
+.cascading-menu-child {
+    background-color: $color-light;
+    color: $color-dark;
+}
+
+.cascading-menu-itemactive {
+    background-color: $color-primary-light;
+}

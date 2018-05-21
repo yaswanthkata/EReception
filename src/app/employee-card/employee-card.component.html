@@ -1,0 +1,104 @@
+<mat-card class="example-card">
+  <mat-card-content>
+    <div fxLayout="column">
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex="30">
+          <img src="{{visitor.img_url}}"
+               class="profile-image">
+        </div>
+        <div fxFlex>
+          <h4>{{visitor.name}}</h4>
+        </div>
+      </div>
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex="30">
+          <label>Email</label>
+        </div>
+        <div fxFlex>
+          <mat-card-subtitle>{{visitor.email}}</mat-card-subtitle>
+        </div>
+      </div>
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex="30">
+          <label>Address</label>
+        </div>
+        <div fxFlex>
+          <mat-card-subtitle>{{visitor.address}}</mat-card-subtitle>
+        </div>
+      </div>
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex="30">
+          <label>Mobile</label>
+        </div>
+        <div fxFlex>
+          <mat-card-subtitle>{{visitor.mobile}}</mat-card-subtitle>
+        </div>
+      </div>
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex="30">
+          <label>To Meet</label>
+        </div>
+        <div fxFlex>
+          <mat-card-subtitle>{{visitor.toMeet}}</mat-card-subtitle>
+        </div>
+        <div fxFlex>
+          <button mat-icon-button
+                  color="primary" (click)="openSnackBar('Message sent to',visitor.name)"
+                  class="alert-actions">
+            <mat-icon aria-label="Example icon-button with a message icon">message</mat-icon>
+          </button>
+        </div>
+        <div fxFlex>
+          <button mat-icon-button (click)="openSnackBar('Mail sent to',visitor.name)"
+                  color="primary"
+                  class="alert-actions">
+            <mat-icon aria-label="Example icon-button with a mail icon">mail</mat-icon>
+          </button>
+        </div>
+        <div fxFlex>
+          <button mat-icon-button (click)="openSnackBar('Dialling',visitor.name)"
+                  color="primary"
+                  class="alert-actions">
+            <mat-icon aria-label="Example icon-button with a call icon">call</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex="30">
+          <label>Purpose</label>
+        </div>
+        <div fxFlex>
+          <mat-card-subtitle>{{visitor.purpose}}</mat-card-subtitle>
+        </div>
+      </div>
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex="30">
+          <label>In Time</label>
+        </div>
+        <div fxFlex>
+          <mat-card-subtitle>{{visitor.inTime| date:'shortTime'}}</mat-card-subtitle>
+        </div>
+      </div>
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex="30">
+          <label>Out Time</label>
+        </div>
+        <div fxFlex>
+          <div>
+            <button mat-raised-button
+                    color="primary"
+                    (click)="logOut()">Log Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

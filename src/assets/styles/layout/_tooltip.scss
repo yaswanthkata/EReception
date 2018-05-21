@@ -1,0 +1,66 @@
+﻿@import '../base/module';
+.sds-tooltip {
+    position:absolute;
+    display:none;
+    padding:3px 5px;
+}
+
+.sds-tooltip.sds-tooltip-right,
+.sds-tooltip.sds-tooltip-left {
+    padding: 0 5px;
+}
+
+.sds-tooltip.sds-tooltip-top,
+.sds-tooltip.sds-tooltip-bottom {
+    padding: 5px 0px;
+}
+
+.sds-tooltip .sds-tooltip-text {
+   padding: 3px 10px;
+   background-color: $color-dark;
+   color: $color-light;
+}
+
+.sds-tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.sds-tooltip-right .sds-tooltip-arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: $color-dark;
+}
+
+.sds-tooltip-left .sds-tooltip-arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: $color-dark;
+}
+
+.sds-tooltip.sds-tooltip-top {
+    padding: 5px 0;
+}
+
+.sds-tooltip-top .sds-tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: $color-dark;
+}
+
+.sds-tooltip-bottom .sds-tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: $color-dark;
+}

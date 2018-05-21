@@ -1,0 +1,51 @@
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+    width: 1100px;
+  }
+  .mat-column-email {
+    flex: 0 0 200px;
+  }
+  .mat-column-name {
+    flex: 0 0 130px;
+  }
+  .mat-column-address {
+    flex: 0 0 130px;
+  }
+  .mat-column-purpose {
+    flex: 0 0 100px;
+  }
+  .mat-column-position {
+    flex: 0 0 30px;
+  }
+  .mat-column-mobile {
+    flex: 0 0 150px;
+  }
+  .mat-header-cell.mat-sort-header-sorted {
+    color: black;
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 900px;
+  }
+  .visitor-card{
+      margin-top: 55px;
+  }
+
+  .highlight{
+    background: #81D4FA; /* green */
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  .example-card {
+    width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  

@@ -1,0 +1,29 @@
+﻿@import '../base/module';
+.paginator {
+    display: flex;
+    button {
+        width: 32px;
+        height: 32px;
+        background-color: $color-primary;
+        color: $color-light;
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .button:not(:first-child) {
+        margin-left: 10px;
+    }
+    .page-link {
+        background-color: $color-primary-light;
+        color: $color-font-dark;
+    }
+    .page-link-active {
+        background-color: $color-primary;
+        color: $color-light;
+    }
+    button[disabled] {
+        background-color: $color-ui-borders;
+    }
+}

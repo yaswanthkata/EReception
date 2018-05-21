@@ -1,0 +1,92 @@
+@import '../base/module';
+sds-data-grid table {
+    border-collapse: collapse;
+    width: 100%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    table-layout: fixed;
+    tr {
+        cursor: pointer;
+    }
+    th {
+        cursor: default;
+        .sds-column-sorsds-data-grid table {
+            cursor: pointer;
+        }
+    }
+    th,
+    td {
+        white-space: nowrap;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+sds-data-grid table thead tr th {
+    padding-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    .icon {
+        margin-left: 5px
+    }
+    .icon-sort-up,
+    .icon-sort-down {
+        font-size: 5px;
+    }
+}
+
+sds-data-grid table thead .sds-table-header {
+    display: flex;
+    align-items: center;
+    border-right: none;
+    border-bottom: 3px solid $color-ui-borders;
+    border-left: none;
+    border-top: none;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    font-family: $font-secondary;
+    font-weight: 800;
+    padding: 0 5px;
+    &.text-align-center {
+        justify-content: center;
+    }
+    &.text-align-right {
+        justify-content: flex-end;
+    }
+    span {
+        line-height: 1;
+        white-space: nowrap;
+    }
+}
+
+sds-data-grid table tbody td {
+    border-right: 2px solid $color-light;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    overflow: hidden;
+    white-space: nowrap;
+    input {
+        outline: medium none;
+        text-align: inherit;
+        &:focus {
+            outline: none;
+        }
+    }
+    span {
+        line-height: 1;
+        white-space: nowrap;
+    }
+}
+
+sds-data-grid .odd {
+    background-color: $color-primary-light;
+}
+
+sds-data-grid .selected {
+    background-color: $color-primary;
+    color: $color-light;
+}

@@ -1,0 +1,30 @@
+﻿@import '../base/module';
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-secondary;
+    margin: 0;
+}
+
+.fontweight-light {
+    font-weight: 300;
+}
+
+.fontweight-regular {
+    font-weight: 400;
+}
+
+.fontweight-bold {
+    font-weight: 700;
+}
+
+.fontcolor-light {
+    color: $color-light;
+}
+
+.fontcolor-dark {
+    color: $color-dark;
+}
+
+.font-uppercase {
+    text-transform: uppercase;
+}

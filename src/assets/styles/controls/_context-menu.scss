@@ -1,0 +1,26 @@
+@import '../base/module';
+.contextmenu {
+    z-index: 1000;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    background-color: $color-light;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .menu-list a {
+        border-radius: 2px;
+        display: block;
+        padding: 5px 10px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .icon {
+        display: inline-block;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        vertical-align: top;
+        width: 24px;
+    }
+}

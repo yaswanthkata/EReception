@@ -1,0 +1,141 @@
+<div class="register-visitor">
+  <div fxLayout="column">
+    <div fxFlex="20"
+         class="card-header">
+      <h3>Visitor Registration</h3>
+    </div>
+    <div fxFlex="80">
+      <div fxLayout="column">
+        <div fxLayout
+             fxFlex="15">
+          <div fxFlex="45">
+            <h5 class="form-label">Name :</h5>
+          </div>
+          <div fxFlex="55">
+            <mat-form-field>
+              <input matInput
+                     [(ngModel)]="name"
+                     placeholder="Name">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout
+             fxFlex="15">
+          <div fxFlex="45">
+            <h5 class="form-label">Mobile :</h5>
+          </div>
+          <div fxFlex="55">
+            <mat-form-field>
+              <input type="tel"
+                     [(ngModel)]="mobile"
+                     matInput
+                     placeholder="Mobile">
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout
+             fxFlex="15">
+          <div fxFlex="45">
+            <h5 class="form-label">Contact Person :</h5>
+          </div>
+          <div fxFlex="55">
+            <mat-form-field class="example-full-width">
+              <input matInput  [(ngModel)]="contactPerson"
+                     placeholder="Employee"
+                     aria-label="Employee"
+                     [matAutocomplete]="auto"
+                     [formControl]="employeeCtrl">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let employee of filteredEmployees | async"
+                            [value]="employee.name">
+                  <img style="vertical-align:middle;"
+                       aria-hidden
+                       src="{{employee.img_url}}"
+                       height="25" />
+                  <span>{{ employee.name }}</span>
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout
+             fxFlex="15">
+          <div fxFlex="45">
+            <h5 class="form-label">E-mail :</h5>
+          </div>
+          <div fxFlex="55">
+            <mat-form-field>
+              <input matInput
+                     [(ngModel)]="email"
+                     placeholder="Email">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout
+             fxFlex="15">
+          <div fxFlex="45">
+            <h5 class="form-label">Address :</h5>
+          </div>
+          <div fxFlex="55">
+            <mat-form-field>
+              <textarea matInput
+                        [(ngModel)]="address"
+                        placeholder="Address"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout
+             fxFlex="15">
+          <div fxFlex="45">
+            <h5 class="form-label"
+                style="margin-top:0px;">Gender :</h5>
+          </div>
+          <div fxFlex="55">
+            <mat-radio-group class="example-radio-group"
+                             [(ngModel)]="gender">
+              <mat-radio-button value="1">Male</mat-radio-button>
+              <mat-radio-button value="2">Female</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div fxLayout
+             fxFlex="15">
+          <div fxFlex="45">
+            <h5 class="form-label">Purpose :</h5>
+          </div>
+          <div fxFlex="55">
+            <mat-form-field>
+              <mat-select placeholder="Purpose of Visit"    [(ngModel)]="purpose">
+                <mat-option *ngFor="let purpose of purposes"
+                            [value]="purpose.value">
+                  {{ purpose.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout>
+          <div fxFlex="50"></div>
+          <div fxFlex="50">
+            <div fxLayout="column">
+              <div mat-dialog-actions>
+                <button mat-raised-button
+                        color="primary"
+                        (click)="onNoClick()">Cancel</button>
+                <button mat-raised-button
+                        color="primary"
+                        [mat-dialog-close]="data.animal"
+                        cdkFocusInitial
+                        (click)="addVisitor()">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
