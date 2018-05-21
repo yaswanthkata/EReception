@@ -1,4 +1,4 @@
-# ERegistration
+# EReception
 A simple Angular 6 Project using angular material.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
