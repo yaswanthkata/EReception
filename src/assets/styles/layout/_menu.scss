@@ -1,0 +1,75 @@
+﻿@import '../base/module';
+.cascading-menu-root {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cascading-menu {
+    padding: 0;
+    
+    position: absolute;
+    display: none;
+    z-index: 100000;
+}
+
+.cascading-menu .cascading-menu-item {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin: 1px 0;
+    padding: 5px 10px;
+    
+    span {
+        display: flex;
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+            margin-left: 5px;
+        }
+    }
+}
+
+.cascading-menu .cascading-menu-parent .cascading-menu-child {
+    display: none;
+    padding: 0;
+    position: absolute;
+    list-style: none;
+}
+
+.cascading-menu .cascading-menu-parent {
+    position: relative;
+}
+
+.cascading-menu-itemactive > .cascading-submenu > ul {
+    display: block !important;
+}
+
+.cascading-menu-child {
+    position: absolute;
+}
+
+.cascading-menu,
+.cascading-menu-child {
+    background-color: $color-light;
+    color: $color-dark;
+}
+
+.cascading-menu-child {
+    display: none;
+}
+
+.cascading-menu-item {
+    position: relative;
+}
+
+.cascading-menu-itemactive>.cascading-submenu>ul {
+    display: block;
+}
+
+.cascading-menu-itemactive {
+    background-color: $color-primary-light;
+}

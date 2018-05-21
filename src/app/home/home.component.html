@@ -1,0 +1,107 @@
+<div fxLayout>
+  <div fxFlex="10">
+
+  </div>
+  <div fxFlex>
+    <div fxLayout="column">
+      <div fxFlex="20"
+           fxLayout>
+        <div fxFlex>
+          <mat-form-field>
+            <input matInput
+                   (keyup)="applyFilter($event.target.value)"
+                   placeholder="Search">
+          </mat-form-field>
+        </div>
+        <div fxFlex>
+          <button mat-raised-button
+                  color="primary"
+                  (click)="addVisitor()">Add Visitor</button>
+          <button mat-raised-button
+                  color="primary"
+                  (click)="editVisitor(selectedVisitor)">Edit</button>
+          <button mat-raised-button
+                  color="primary"
+                  (click)="deleteVisitor(selectedVisitor)">Delete</button>
+        </div>
+
+      </div>
+      <div fxFlex="80"
+           fxLayout>
+        <div fxFlex="70">
+          <mat-table #table
+                     [dataSource]="dataSource"
+                     matSort>
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> No. </mat-header-cell>
+              <mat-cell *matCellDef="let row; let i = index;"> {{i+1}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="mobile">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> Mobile </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.mobile}} </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> Email </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="purpose">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> Purpose </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.purpose}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="address">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> Address </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="toMeet">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> ToMeet </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.toMeet}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="inTime">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> In Time </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.inTime | date:'shortTime'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="outTime">
+              <mat-header-cell *matHeaderCellDef
+                               mat-sort-header> Out Time </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.outTime | date:'shortTime'}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; let i = index; columns: displayedColumns;"
+                     (click)="selectRow(row,i+1)"
+                     [ngClass]="{'highlight': selectedRowIndex == i+1}"></mat-row>
+          </mat-table>
+        </div>
+        <div fxFlex="30"
+             class="visitor-card"
+             fxFlexOffset="5">
+
+          <app-employee-card *ngIf="selectedVisitor"
+                             [visitor]="selectedVisitor"></app-employee-card>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

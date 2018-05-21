@@ -1,0 +1,247 @@
+@import '../base/module';
+html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+textarea,
+span,
+{
+    line-height: 1.6;
+}
+
+body {
+    font-size: 13px;
+    font-family: $font-primary;
+    color: $color-font-dark;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+input,
+button,
+select,
+textarea,
+a {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    position: relative;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:active,
+    &:focus,
+    &.is-active {
+        outline: none;
+    }
+}
+
+button,
+input,
+keygen,
+select {
+    line-height: 1;
+}
+
+.main-content {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.main-content.authenticated {
+    height: calc(100% - 56px);
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.default-input {
+    border: 2px solid $color-ui-borders;
+    border-radius: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    outline: medium none;
+    font-weight: normal;
+    height: 30px;
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+    }
+}
+
+.padding-zero {
+    padding: 0;
+}
+
+.center-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    border: 1px solid $color-ui-borders;
+}
+
+.unselectable-text {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+input:-webkit-autofill {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit !important;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]+label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type=checkbox]:checked+label:before {
+    content: "\E00B";
+}
+
+input[type=checkbox]+label:before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Icons";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: none;
+    content: "\E00C";
+    border: 2px solid $color-font-dark;
+    height: 20px;
+    width: 20px;
+}
+
+input[type="checkbox"][disabled]+label:before {
+    background-color: #d2d2d2;
+    opacity: 0.8;
+}
+
+input[type="checkbox"][disabled]+label {
+    color: #d2d2d2;
+    opacity: 0.8;
+}
+
+.information {
+    background-color: $color-information;
+}
+
+.warning {
+    background-color: $color-warning;
+}
+
+.error,
+{
+    background-color: $color-error;
+}
+
+.fatal {
+    background-color: $color-error;
+}
+
+.is-vertical {
+    flex-direction: column;
+}
+
+.column {
+    padding: 0;
+}
+
+.columns {
+    margin: 0;
+}
+
+.columns:last-child {
+    margin-bottom: 0;
+}
+
+.columns:not(:last-child) {
+    margin-bottom: 0.25rem;
+}
+
+sds-image-modal {
+    display: block;
+    padding: 8px;
+}
+
+@media screen and (min-width: 1280px) {
+     ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+     ::-webkit-scrollbar-track {
+        background-color: $color-ui-borders;
+    }
+     ::-webkit-scrollbar-thumb {
+        background-color: $color-dark;
+    }
+}
+
+@include desktop {
+    .main-content.authenticated {
+        height: calc(100% - 90px);
+    }
+}

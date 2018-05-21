@@ -1,0 +1,38 @@
+﻿@import '../base/module';
+.tree {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .icon {
+        display: inline-block;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        vertical-align: top;
+        width: 24px;
+    }
+    .treenode-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .polygon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+        }
+    }
+    .treenode-label {
+        padding: 1px 10px;
+        &.is-selected {
+            background-color: $color-primary;
+            font-weight: bold;
+            color: $color-light;
+            input {
+                color: $color-font-dark;
+            }
+        }
+    }
+}

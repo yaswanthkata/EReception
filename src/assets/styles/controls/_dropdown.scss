@@ -1,0 +1,36 @@
+﻿@import '../base/module';
+.sds-dropdown {
+    background-color: $color-primary-light;
+}
+
+.sds-dropdown-content {
+    .selected-item {
+        span {
+            padding: 0 4px;
+        }
+        sds-dropdown-template-renderer {
+            display: none;
+        }
+        .arrow {
+            color: $color-light;
+            justify-content: center;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.sds-dropdown-menu {
+    color: $color-dark;
+    background-color: $color-light;
+    li {
+        &:hover {
+            background-color: $color-control-readonly;
+        }
+        &.dropdown-item-selected {
+            background-color: $color-primary-light;
+            color: $color-font-dark;
+        }
+    }
+}

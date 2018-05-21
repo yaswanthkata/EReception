@@ -1,0 +1,14 @@
+﻿@import '../base/module';
+.tabs {
+    border-bottom: 3px solid $color-ui-borders;
+    font-family: $font-secondary;
+
+}
+
+.tabs>li {
+    background-color: $color-light;
+}
+
+.tabs>li.active {
+    background-color: $color-ui-borders;
+}

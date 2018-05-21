@@ -1,0 +1,595 @@
+@import '../base/module';
+.sds-dialog.sds-dialog-overlay {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color .2s cubic-bezier(.25, .8, .25, 1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    &:focus {
+        outline: none;
+    }
+    &.is-visible {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.sds-dialog.sds-dialog-nonmodal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    &:focus {
+        outline: none;
+    }
+}
+
+.sds-dialog.sds-dialog-container {
+    max-height: 100%;
+    max-width: 100%;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    background-color: $color-light; // overflow: auto;
+}
+
+.sds-dialog.sds-dialog-header {
+    background-color: $color-primary;
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2,
+    h3 {
+        font-family: $font-secondary;
+        color: $color-light;
+        display: inline-block;
+        cursor: default;
+    }
+    .close-dialog {
+        float: right;
+        cursor: pointer;
+        color: $color-light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+    &.nonmodal {
+        height: 30px;
+        padding: 0 15px;
+        .close-dialog {
+            font-size: 15px;
+        }
+    }
+    &.header-alternate {
+        background-color: $color-dark;
+    }
+}
+
+.sds-dialog.sds-dialog-content {
+    width: 100%;
+    height: calc(100% - 60px);
+    max-height: calc(100vh - 60px);
+}
+
+.sds-dialog.sds-dialog-container.sds-auto-grow {
+    position: relative;
+    .sds-dialog.sds-dialog-content {}
+}
+
+.sds-dialog.sds-dialog-container.sds-email-form {
+    width: 80vw;
+    height: 80vh;
+}
+
+.sds-dialog.sds-dialog-container.sds-address-dialog {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+        min-height: 200px;
+        min-width: 600px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-gallery-dialog {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    .sds-dialog.sds-dialog-content {
+        height: 100%;
+        width: 100%;
+        max-height: 100%;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-mapp-attachment-dialog {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+    background-color: #f2f2f2;
+}
+
+.sds-dialog.sds-dialog-container.sds-multi-select {
+    width: 190px;
+    max-width: 190px;
+    height: auto;
+}
+
+.sds-dialog.sds-dialog-container.sds-stock-info-dialog {
+    max-width: 1000px;
+    height: auto;
+    max-height: 80%;
+    overflow: hidden;
+    .sds-dialog-content {
+        overflow: hidden;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-default-texts-dialog {
+    max-width: 1000px;
+    height: 1200px;
+    max-height: 90%;
+    overflow: hidden;
+    .sds-dialog-content {
+        overflow: hidden;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-disapprove-project,
+.sds-dialog.sds-dialog-container.sds-exception-dialog {
+    width: 400px;
+    height: auto;
+}
+
+.sds-dialog.sds-dialog-container.sds-lockedproject-dialog {
+    width: 400px;
+    height: auto;
+}
+
+.sds-dialog.sds-dialog-container.sds-new-category-dialog {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+        min-height: auto;
+        min-width: auto;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-pm-popup-dialog {
+    width: 90%;
+    height: auto;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+    ;
+    .sds-dialog.sds-dialog-header {
+        height: 25px;
+    }
+    .close-dialog {
+        display: none;
+    }
+}
+
+.sds-dialog.sds-dialog-container.pos-sale-quantity-dialog {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+    ;
+    .sds-dialog.sds-dialog-header {
+        display: none;
+    }
+    .close-dialog {
+        display: none;
+    }
+}
+
+.sds-dialog.sds-dialog-container.pos-compose-items-dialog {
+    width: 320px;
+    height: auto;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+    ;
+    .sds-dialog.sds-dialog-header {
+        height: 40px;
+        padding: 0 5px;
+    }
+    .close-dialog {
+        display: none;
+    }
+}
+
+.sds-dialog.sds-dialog-container.pos-default-material-popup-dialog {
+    width: 320px;
+    height: auto;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+    ;
+    .sds-dialog.sds-dialog-header {
+        height: 40px;
+        padding: 0 5px;
+    }
+    .close-dialog {
+        display: none;
+    }
+}
+
+.sds-dialog.sds-dialog-container.pos-payment-method-popup-dialog {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+    .sds-dialog.sds-dialog-header {
+        width: 350px;
+        height: 40px;
+        padding: 0 5px;
+    }
+    .close-dialog {
+        display: none;
+    }
+}
+
+.sds-dialog.sds-dialog-container.pos-cash-popup-dialog {
+    width: 228px;
+    height: auto;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+    .sds-dialog.sds-dialog-header {
+        height: 40px;
+        padding: 0 5px;
+    }
+    .close-dialog {
+        display: none;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-customer-card,
+.sds-dialog.sds-dialog-container.sds-employee-card,
+.sds-dialog.sds-dialog-container.sds-supplier-card {
+    min-width: 600px;
+    height: auto;
+    max-width: 730px;
+    max-height: 100%;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+        min-height: 200px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-role-card {
+    min-width: 880px;
+    height: auto;
+    max-width: 880px;
+    max-height: 100%;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-materialselector-dialog {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+        min-width: 350px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-price-dialog {
+    width: 60%;
+    height: auto;
+    max-height: 100%;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-whats-new {
+    width: 80%;
+    height: 80%;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-requiredproperties-dialog,
+.sds-dialog.sds-dialog-container.sds-userlanguage-dialog {
+    width: 40%;
+    height: auto;
+    max-height: 100%;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+}
+
+.sds-setting-dialog {
+    width: 100%;
+    height: 100%;
+}
+
+.sds-dialog.sds-dialog-container.sds-form-card {
+    min-width: 40%;
+    max-width: 80%;
+    overflow: visible;
+}
+
+.sds-dialog.sds-dialog-container.sds-project-card {
+    max-width: 700px;
+    overflow: hidden;
+}
+
+.sds-dialog.sds-dialog-container.sds-customerbrowse-dialog,
+.sds-dialog.sds-dialog-container.sds-supplierbrowse-dialog,
+.sds-dialog.sds-dialog-container.sds-materialbrowse-dialog,
+.sds-dialog.sds-dialog-container.sds-employeebrowse-dialog {
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-confirmation-dialog {
+    position: relative;
+    .sds-dialog.sds-dialog-header {
+        height: 45px;
+    }
+    .sds-dialog.sds-dialog-content {
+        padding: 15px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-material-card {
+    overflow: hidden;
+}
+
+.sds-dialog.sds-dialog-container.sds-measure-dialog {
+    position: relative;
+    min-height: 200px;
+    cursor: move;
+    .sds-dialog.sds-dialog-header {
+        height: 45px;
+    }
+    .sds-dialog.sds-dialog-content {
+        padding: 10px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-close-polygon {
+    position: relative;
+    min-width: 500px;
+    min-height: 400px;
+    float: right;
+    .sds-dialog.sds-dialog-header {
+        height: 40px;
+        padding: 0px 15px 10px 10px;
+    }
+    .sds-dialog.sds-dialog-content {
+        padding: 10px 10px 20px 10px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-laying-direction {
+    position: relative;
+    min-width: 350px;
+    min-height: 200px;
+    float: right;
+    .sds-dialog.sds-dialog-header {
+        height: 40px;
+        padding: 15px 15px 15px 10px;
+    }
+    .sds-dialog.sds-dialog-content {
+        padding: 5px 5px 5px 5px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-polygon-property {
+    position: relative;
+    min-width: 300px;
+    min-height: 500px;
+    float: right;
+    .sds-dialog.sds-dialog-header {
+        height: 40px;
+        padding: 0px 15px 10px 10px;
+    }
+    .sds-dialog.sds-dialog-content {
+        padding: 10px 10px 20px 10px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-delete-polygon-dialog {
+    position: relative;
+    min-height: 80px;
+    width: 400px;
+    float: right;
+    cursor: default;
+    .sds-dialog.sds-dialog-header {
+        height: 35px;
+        padding: 10px 10px 10px 10px;
+    }
+    .sds-dialog.sds-dialog-content {
+        padding: 10px 10px 10px 10px;
+        text-align: -webkit-center;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-is-child-polygon {
+    position: relative;
+    min-height: 80px;
+    width: 400px;
+    float: right;
+    cursor: default;
+    .sds-dialog.sds-dialog-header {
+        height: 35px;
+        padding: 10px 10px 10px 10px;
+    }
+    .sds-dialog.sds-dialog-content {
+        padding: 10px 10px 10px 10px;
+        text-align: -webkit-center;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-drawing-toolbox-dialog {
+    position: relative;
+    min-width: 500px;
+    min-height: 400px;
+    float: right;
+    .sds-dialog.sds-dialog-header {
+        height: 55px;
+        padding: 10px 10px 20px 10px;
+    }
+    .sds-dialog.sds-dialog-content {
+        padding: 10px 10px 20px 10px;
+    }
+}
+
+.sds-dialog.sds-dialog-container.sds-loading-dialog {
+    padding: 40px;
+    position: relative;
+}
+
+.sds-dialog.sds-dialog-container.sds-loading-dialog {
+    min-height: 100px;
+    min-width: 250px;
+}
+
+.sds-dialog.sds-dialog-container.sds-mapp-task-card {
+    min-width: 90%;
+    height: 90%;
+    max-width: 90%;
+    max-height: 100%;
+    overflow: visible;
+    .sds-dialog.sds-dialog-content {
+        position: relative;
+        min-height: 200px;
+    }
+}
+
+// Phone
+@include mobile {
+    .sds-dialog.sds-dialog-container.sds-project-card,
+    .sds-dialog.sds-dialog-container.sds-material-card {
+        width: 95%;
+        max-height: 100%;
+    }
+    .sds-dialog.sds-dialog-container.sds-employeebrowse-dialog,
+    .sds-dialog.sds-dialog-container.sds-customerbrowse-dialog,
+    .sds-dialog.sds-dialog-container.sds-supplierbrowse-dialog,
+    .sds-dialog.sds-dialog-container.sds-materialbrowse-dialog {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+    }
+}
+
+// Tablet
+@include tablet {
+    .sds-dialog.sds-dialog-container.sds-employeebrowse-dialog,
+    .sds-dialog.sds-dialog-container.sds-supplierbrowse-dialog,
+    .sds-dialog.sds-dialog-container.sds-customerbrowse-dialog,
+    .sds-dialog.sds-dialog-container.sds-materialbrowse-dialog {
+        width: 95%;
+        height: 100%;
+        max-height: 100%;
+    }
+    .sds-dialog.sds-dialog-container.sds-project-card,
+    .sds-dialog.sds-dialog-container.sds-material-card {
+        width: 75%;
+        max-height: 100%;
+    }
+}
+
+// Desktops
+@include desktop {
+    .sds-dialog.sds-dialog-container.sds-material-card {
+        width: 80%;
+    }
+    .sds-dialog.sds-dialog-container.sds-project-card {
+        width: 60%;
+    }
+    .sds-dialog.sds-dialog-container.sds-segment-input-dialog {
+        width: 30%;
+        min-width: 150px;
+        min-height: 350px;
+    }
+    .sds-dialog.sds-dialog-container.sds-special-segment-dialog {
+        min-width: 500px;
+        min-height: 400px;
+    }
+    .sds-dialog.sds-dialog-container.sds-customerbrowse-dialog,
+    .sds-dialog.sds-dialog-container.sds-supplierbrowse-dialog,
+    .sds-dialog.sds-dialog-container.sds-materialbrowse-dialog {
+        height: 85%;
+    }
+    .sds-dialog.sds-dialog-container.sds-employeebrowse-dialog {
+        max-width: 1200px;
+        height: 90%;
+    }
+}
+
+// High res desktops
+@include widescreen {
+    .sds-dialog.sds-dialog-container.sds-employeebrowse-dialog {
+        height: 75%;
+    }
+    .sds-dialog.sds-dialog-container.sds-project-card {
+        width: 40%;
+        min-width: 700px;
+    }
+    .sds-dialog.sds-dialog-container.sds-material-card {
+        width: 50%;
+        min-width: 800px;
+    }
+    .sds-dialog.sds-dialog-container.sds-segment-input-dialog {
+        width: 20%;
+        min-width: 150px;
+        min-height: 350px;
+    }
+}

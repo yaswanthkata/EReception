@@ -1,0 +1,11 @@
+﻿@import '../base/module';
+.autocomplete-list {
+    background-color: $color-light;
+    color: $color-dark;
+    ul {
+        overflow-x: hidden;
+    }
+    .suggestion-highlighted {
+        background-color: $color-primary-light;
+    }
+}
