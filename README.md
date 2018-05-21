@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  
 # Working demo 
 
-https://angular-zt6nod.stackblitz.io/
+https://ereception.stackblitz.io/
 
 # Features 
  1) Material grid binding
