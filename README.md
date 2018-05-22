@@ -5,10 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Setup 
  1) clone repo
  2) npm install
- 
-# Working demo 
 
-https://ereception.stackblitz.io/
 
 # Features 
  1) Material grid binding
